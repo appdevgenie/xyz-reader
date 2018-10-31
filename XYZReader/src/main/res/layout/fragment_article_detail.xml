@@ -73,9 +73,7 @@
                     style="@style/article_body" />
 
             </com.example.xyzreader.ui.MaxWidthLinearLayout>
-
         </android.support.constraint.ConstraintLayout>
-
     </com.example.xyzreader.ui.ObservableScrollView>
 
     <android.support.design.widget.FloatingActionButton
