@@ -21,12 +21,12 @@
                 <ImageView
                     android:id="@+id/photo"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="@dimen/detail_photo_height"
                     android:scaleType="centerCrop" />
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="112dp"
+                    android:layout_height="@dimen/detail_photo_height"
                     android:background="@drawable/photo_background_protection" />
 
             </FrameLayout>
@@ -35,7 +35,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:background="@color/color_white"
+                android:gravity="center"
+                android:background="@color/theme_primary_light"
                 android:elevation="2dp"
                 android:maxWidth="@dimen/detail_card_max_width"
                 android:orientation="vertical"
@@ -47,8 +48,7 @@
                     android:id="@+id/meta_bar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="@dimen/detail_metabar_vert_padding"
+                    android:layout_gravity="bottom|center"
                     android:background="@color/color_meta_bar_background"
                     android:orientation="vertical"
                     android:paddingLeft="@dimen/detail_inner_horiz_margin"
