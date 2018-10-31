@@ -4,8 +4,8 @@ This repository stores code for the XYZ Reader project in Udacity's Android Nano
 
 ## Screenshots
 
-![device-2018-10-31-075244](https://user-images.githubusercontent.com/39134030/47769143-6b426380-dce3-11e8-8e15-7d03e7550f2d.png)
 ![device-2018-10-31-075315](https://user-images.githubusercontent.com/39134030/47769146-6b426380-dce3-11e8-822d-4fea8983a180.png)
+![device-2018-10-31-075244](https://user-images.githubusercontent.com/39134030/47769143-6b426380-dce3-11e8-8e15-7d03e7550f2d.png)
 
 ## Libraries
 
