@@ -9,9 +9,9 @@ This repository stores code for the XYZ Reader project in Udacity's Android Nano
 
 ## Libraries
 
-* [Design] (https://developer.android.com/topic/libraries/support-library/features)
-* [RecyclerView] (https://developer.android.com/guide/topics/ui/layout/recyclerview)
-* [CardView] (https://developer.android.com/guide/topics/ui/layout/cardview)
+* [Design](https://developer.android.com/topic/libraries/support-library/features)
+* [RecyclerView](https://developer.android.com/guide/topics/ui/layout/recyclerview)
+* [CardView](https://developer.android.com/guide/topics/ui/layout/cardview)
 
 ## Android Developer Nanodegree
 
