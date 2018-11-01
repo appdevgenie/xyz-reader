@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
@@ -144,6 +145,7 @@ public class ArticleListActivity extends AppCompatActivity implements
             return mCursor.getLong(ArticleLoader.Query._ID);
         }
 
+
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = getLayoutInflater().inflate(R.layout.list_item_article, parent, false);
@@ -151,6 +153,15 @@ public class ArticleListActivity extends AppCompatActivity implements
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    /*Intent intent =
+                            new Intent(Intent.ACTION_VIEW, ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
+                    ActivityOptionsCompat optionsCompat =
+                            ActivityOptionsCompat.makeSceneTransitionAnimation
+                                    (ArticleListActivity.this,view.findViewById(R.id.thumbnail),
+                                            getString(R.string.transitionThumb));
+                    startActivity(intent, optionsCompat.toBundle());*/
+
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition()))));
                 }
@@ -176,12 +187,6 @@ public class ArticleListActivity extends AppCompatActivity implements
             Date publishedDate = parsePublishedDate();
             if (!publishedDate.before(START_OF_EPOCH.getTime())) {
 
-                /*holder.subtitle.setText(Html.fromHtml(
-                        DateUtils.getRelativeTimeSpanString(
-                                publishedDate.getTime(),
-                                System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
-                                DateUtils.FORMAT_ABBREV_ALL).toString()));*/
-
                 holder.subtitle.setText(Html.fromHtml(
                         DateUtils.getRelativeTimeSpanString(
                                 publishedDate.getTime(),
@@ -191,16 +196,13 @@ public class ArticleListActivity extends AppCompatActivity implements
                                 + mCursor.getString(ArticleLoader.Query.AUTHOR)
                                 + "</font>"));
             } else {
-                /*holder.subtitle.setText(Html.fromHtml(
-                        outputFormat.format(publishedDate)));*/
+
                 holder.subtitle.setText(Html.fromHtml(
                         outputFormat.format(publishedDate)
                         + "<br/>" + " by <font color='#ffffff'>"
                         + mCursor.getString(ArticleLoader.Query.AUTHOR)
                         + "</font>"));
             }
-
-            //holder.subtitleAuthor.setText(mCursor.getString(ArticleLoader.Query.AUTHOR));
 
             holder.thumbnailView.setImageUrl(
                     mCursor.getString(ArticleLoader.Query.THUMB_URL),
@@ -238,7 +240,6 @@ public class ArticleListActivity extends AppCompatActivity implements
         DynamicHeightNetworkImageView thumbnailView;
         TextView titleView;
         TextView subtitle;
-        //TextView subtitleAuthor;
         ConstraintLayout constraintLayout;
 
         ViewHolder(View view) {
@@ -247,7 +248,6 @@ public class ArticleListActivity extends AppCompatActivity implements
             thumbnailView = view.findViewById(R.id.thumbnail);
             titleView = view.findViewById(R.id.article_title);
             subtitle = view.findViewById(R.id.article_subtitle);
-            //subtitleAuthor = view.findViewById(R.id.article_subtitle_author);
             constraintLayout = view.findViewById(R.id.constraintLayout);
         }
     }
